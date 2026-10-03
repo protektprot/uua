@@ -4,6 +4,8 @@ Data audytu: 03.10.2026. Horyzont planu: 03.10.2026–01.01.2027.
 
 **Status danych.** Żaden z plików wymienionych w poleceniu (A1–A22, B1–B3, C, D, E_K1–K3, dane-konta, dane-oferty) nie został dołączony. Repozytorium było puste. Wszystkie liczby pochodzą z bloku „kontekst sprzedawcy” (odczyt z Sales Center 30.09–01.10.2026) albo są z nich policzone; wzór podaję przy wyniku. Wszystko, czego bez plików nie da się ustalić, oznaczam „brak danych”, a pełna lista braków jest w sekcji 11.
 
+**Aktualizacja 03.10.2026.** Właściciel podał, że zarobek „na rękę” wynosi 30–120% kosztu zakupu, liczony po VAT i po podatku dochodowym. Zastąpiłem tym wcześniejsze założenie o marży 25–45% i przeliczyłem wszystkie liczby, które od niego zależą.
+
 **Oznaczenia źródeł.** KS-A: Allegro Analytics (Wyniki sprzedaży). KS-F: Centrum Finansów 1–29.09.2026. KS-Ads: pulpit Allegro Ads i promowania 30.08–29.09.2026. KS-J: panel Jakość sprzedaży 30.09.2026. KS-O: publiczna strona sprzedawcy 01.10.2026. KS-P: profil konta (prowizje, abonament, saldo). WA: wiedza o Allegro ze stanem na wrzesień 2026. OBL: moje obliczenie (wzór obok).
 
 **Oznaczenia reguł.** [fakt Allegro]: regulamin, pomoc, komunikat. [praktyka ekspercka]: agencje i sprzedawcy, bez potwierdzenia Allegro. [hipoteza]: mój wniosek z danych.
@@ -11,7 +13,7 @@ Data audytu: 03.10.2026. Horyzont planu: 03.10.2026–01.01.2027.
 **Założenia wspólne dla całego dokumentu** (każde zastąp danymi z plików, gdy będą):
 - Z1. Czynny podatnik VAT, stawka 23%: netto = brutto / 1,23.
 - Z2. Kwoty w Centrum Finansów są brutto. Za tym przemawia pozycja „pozostałe” 49 zł, równa abonamentowi Analytics za 49 zł brutto. Sprawdź w A9.
-- Z3. Marża towarowa g = (cena netto − koszt zakupu netto) / cena netto wynosi 25–45%. Nie znam kosztów zakupu, bo nie ma pliku C. Przedział jest założeniem, a nie benchmarkiem.
+- Z3. Zarobek „na rękę” k = 30–120% kosztu zakupu, po VAT i po podatku dochodowym (dane od właściciela). Rozumiem go tak: k = (cena netto + dostawa netto − prowizja − etykieta − pakowanie − koszt zakupu netto − PIT) / koszt zakupu netto, bez Wyróżnień i Ads. Przyjmuję PIT 12% (pierwszy próg skali). Niech Q = (cena + 10,49) / 1,23 − 1,50 − 3,92 − P, czyli to, co zostaje z zamówienia po Allegro i wysyłce, a przed zakupem towaru. Marża przed PIT m0 = Q × k / (0,88 + k): **25,4% Q przy 30% i 57,7% Q przy 120%**. Koszt zakupu X = Q − m0. Cenę minimalną i progi reklamy liczę przed PIT, a zysk „na rękę” podaję osobno, po odjęciu 12% na końcu. Przy PIT 32% (dochód roczny powyżej 120 tys. zł) marża przed PIT byłaby o 4–6 p.p. Q wyższa. Nie wiem, które SKU mają 30%, a które 120%, więc pokazuję oba krańce.
 - Z4. Pakowanie kosztuje 1,50 zł netto na zamówienie.
 - Z5. Średni koszt etykiety: 269,92 zł brutto opłat za dostawę / 56 zamówień = 4,82 zł brutto = 3,92 zł netto na zamówienie (KS-F, KS-A). Jeśli część etykiet kupujesz poza Allegro, prawdziwy koszt jest wyższy.
 - Z6. Kupujący płaci dostawę 10,49 zł brutto (KS-O). Nie wiem, które oferty mają Smart!.
@@ -21,9 +23,11 @@ Data audytu: 03.10.2026. Horyzont planu: 03.10.2026–01.01.2027.
 
 ## 1. Streszczenie dla właściciela
 
-Sprzedaż rośnie: w 30 dniach do 29.09 transakcje wzrosły o 56%, a wizyty o 66% (KS-A). Zysk zjada jednak płatne promowanie. We wrześniu reklama i promowanie kosztowały 396,57 zł, czyli 9,9% obrotu (KS-F). Każda złotówka wydana na Allegro Ads wróciła jako 0,50 zł sprzedaży (KS-Ads). Próg opłacalności dla tego konta leży między 3,45 a 8,41 (OBL, sekcja 2B). Wzrost robią tanie produkty: średnia cena sprzedanej sztuki spadła z 40,11 zł do 24,39 zł, więc obrót rośnie wolniej niż liczba sztuk (+35% wobec +122%).
+Sprzedaż rośnie: w 30 dniach do 29.09 transakcje wzrosły o 56%, a wizyty o 66% (KS-A). Zysk zjada jednak płatne promowanie. We wrześniu reklama i promowanie kosztowały 396,57 zł, czyli 9,9% obrotu (KS-F). Każda złotówka wydana na Allegro Ads wróciła jako 0,50 zł sprzedaży (KS-Ads). Próg opłacalności dla tego konta leży między 2,28 a 5,18 (OBL, sekcja 2B). Wzrost robią tanie produkty: średnia cena sprzedanej sztuki spadła z 40,11 zł do 24,39 zł, więc obrót rośnie wolniej niż liczba sztuk (+35% wobec +122%).
 
-Przy marży towarowej 25–45% konto zarobiło we wrześniu od 67 do 625 zł netto przed kosztami stałymi firmy. Promowanie (322 zł netto) zjadło od 34% do 83% marży sprzed promowania (OBL, sekcja 2A). Większe ryzyko jest przed nami. 13 płatnych Wyróżnień odnawia się co 10 dni, co w pełnym miesiącu kosztuje 776 zł brutto (631 zł netto). Do tego dochodzi Ads w tempie z września: ok. 307 zł brutto (250 zł netto). Razem to do ok. 880 zł netto miesięcznie, czyli więcej niż cały wrześniowy zysk. Żadne z 13 Wyróżnień nie zwraca się nawet przy optymistycznej marży 45%: każde wymaga więcej dodatkowych sztuk, niż oferta w ogóle sprzedała.
+Przy zarobku „na rękę” 30–120% konto zarobiło we wrześniu od 309 do 1 111 zł przed podatkiem dochodowym, czyli ok. 270–980 zł na rękę (bez ZUS i składki zdrowotnej). Promowanie (322 zł netto) zjadło od 22% do 51% marży sprzed promowania (OBL, sekcja 2A). Większe ryzyko jest przed nami. 13 płatnych Wyróżnień odnawia się co 10 dni, co w pełnym miesiącu kosztuje 776 zł brutto (631 zł netto). Do tego dochodzi Ads w tempie z września: ok. 307 zł brutto (250 zł netto). Razem to do ok. 880 zł netto miesięcznie, czyli 80% wrześniowego zysku w wariancie górnym i prawie trzy razy więcej niż w dolnym. 12 z 13 Wyróżnień nie zwraca się nawet przy 120% na rękę: każde wymaga więcej dodatkowych sztuk, niż oferta w ogóle sprzedała. Trzynaste (Garsport Kele) jest przy 120% dokładnie na progu.
+
+Dobra wiadomość z Twoich marż: przy ofertach od ok. 30 zł cena minimalna leży 13–57% poniżej obecnej. Możesz więc walczyć ceną o Top ofertę na wybranych produktach i ustawić bezpłatne reguły cenowe od razu, bez czekania na plik kosztów (sekcja 6).
 
 Drugi hamulec to wysyłka. Tylko 27,27% paczek wychodzi w dniu zakupu, a 90,91% w terminie (KS-J). Do utraty poziomu Super zostało 21 punktów, czyli mniej więcej dwie spóźnione paczki. Licznik zamówień Super Sprzedawcy pokazuje 52 przy progu 50.
 
@@ -32,7 +36,7 @@ Trzy działania na dziś:
 2. Ustaw wysyłkę: realną godzinę graniczną, drugie nadanie wieczorem w automacie i nadawanie w soboty. Zwrot wpłaty zlecaj w dniu odebrania zwrotu.
 3. Sprawdź panel „Aktualizacje ofert”, obowiązki prawne (EPR dla PL, CZ, SK, HU) oraz rabaty transakcyjne po zwrotach.
 
-Oczekiwany efekt w 90 dni: od +600 do +3 050 zł marży netto. Po 12% podatku dochodowego to ok. 530–2 680 zł; szacunek nie obejmuje ZUS ani składki zdrowotnej. Ponad 80% efektu daje cięcie kosztów promowania. Wzrost sprzedaży (zima, firmy, poprawione oferty) przy obecnej skali dodaje 0–240 zł marży miesięcznie. Główne założenia: marża towarowa 25–45%, kwoty w Centrum Finansów brutto, Wyróżnienia odnawiają się same, a co najwyżej połowa sprzedaży przypisanej promowaniu jest jego rzeczywistym efektem. Dolna granica zakłada, że licznik nie dojdzie do 58 i 8 Wyróżnień zostanie do końca roku.
+Oczekiwany efekt w 90 dni: od +500 do +3 220 zł marży przed podatkiem dochodowym. Na rękę, po 12% PIT, to ok. 440–2 830 zł; szacunek nie obejmuje ZUS ani składki zdrowotnej. Ponad 80% efektu daje cięcie kosztów promowania. Wzrost sprzedaży (zima, firmy, poprawione oferty, ceny) przy obecnej skali dodaje 0–360 zł marży miesięcznie. Główne założenia: zarobek na rękę 30–120% po VAT i PIT 12%, kwoty w Centrum Finansów brutto, Wyróżnienia odnawiają się same, a co najwyżej połowa sprzedaży przypisanej promowaniu jest jego rzeczywistym efektem. Dolna granica zakłada, że licznik nie dojdzie do 58 i 8 Wyróżnień zostanie do końca roku.
 
 ---
 
@@ -62,17 +66,15 @@ Oczekiwany efekt w 90 dni: od +600 do +3 050 zł marży netto. Po 12% podatku do
 
 Nadpłata dla oferty w „Pozostałe” wynosi (17% − 11,5%) × (cena + dostawa) na każdej sprzedaży, np. 3,33 zł przy cenie 50 zł. Listę ofert i miesięczną nadpłatę daje dopiero A10 (kolumna category_id) w połączeniu z A9.
 
-**Marża konta: scenariusze** (OBL, założenia Z3–Z5). Przychód z towaru liczę jako 4 023,92 − 56 zamówień × 10,49 zł = 3 436,48 zł brutto, czyli 2 793,89 zł netto. To górna granica przychodu z dostawy, bo zakłada, że każde zamówienie płaciło za nią.
+**Marża konta: scenariusze** (OBL, założenia Z3–Z5). Q konta = 3 271,48 − (1 025,50 − 322,41) − 56 × 1,50 = 2 484,40 zł netto, czyli to, co zostało z września po opłatach Allegro (bez promowania) i pakowaniu, a przed kosztem towaru. Marża przed promowaniem = Q × k / (0,88 + k); koszt zakupu = Q − marża; marża konta = marża przed promowaniem − 322,41 zł; na rękę = marża konta × 0,88.
 
-| Marża towarowa g | Koszt zakupu netto | Pakowanie | Marża konta we wrześniu | Marża przed promowaniem | Na zamówienie przed promowaniem | m% (marża / przychód netto) | ROAS_be = 1 / m% |
+| Zarobek na rękę k | Koszt zakupu netto | Marża przed promowaniem (przed PIT) | Marża konta we wrześniu (przed PIT) | Na rękę po PIT 12% | Na zamówienie przed promowaniem | m% (marża / przychód netto) | ROAS_be = 1 / m% |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| 25% | 2 095 zł | 84 zł | **67 zł** | 389 zł | 6,95 zł | 11,9% | 8,41 |
-| 35% | 1 816 zł | 84 zł | **346 zł** | 668 zł | 11,94 zł | 20,4% | 4,89 |
-| 45% | 1 537 zł | 84 zł | **625 zł** | 948 zł | 16,92 zł | 29,0% | 3,45 |
+| 30% | 1 853 zł | 632 zł | **309 zł** | 272 zł | 11,28 zł | 19,3% | 5,18 |
+| 75% | 1 341 zł | 1 143 zł | **821 zł** | 722 zł | 20,41 zł | 34,9% | 2,86 |
+| 120% | 1 051 zł | 1 433 zł | **1 111 zł** | 978 zł | 25,59 zł | 43,8% | 2,28 |
 
-Wzór: marża konta = 3 271,48 − 1 025,50 − koszt zakupu − 56 × 1,50. Marża przed promowaniem = marża konta + 322,41 zł.
-
-**Co to oznacza.** Konto jest blisko zera albo zarabia kilkaset złotych miesięcznie. Na jednym zamówieniu zostaje 7–17 zł netto przed promowaniem. Przy takiej skali każde 100 zł netto płatnej promocji musi przynieść 6–14 dodatkowych zamówień, żeby się zwrócić. Pewność: średnia (brakuje pliku C).
+**Co to oznacza.** Konto zarabia od ok. 310 do 1 110 zł miesięcznie przed PIT i przed kosztami stałymi firmy. Na jednym zamówieniu zostaje 11–26 zł przed promowaniem. Każde 100 zł netto płatnej promocji musi przynieść 4–9 dodatkowych zamówień, żeby się zwrócić. Pewność: średnia (nie znam rozkładu marż między SKU; dokładnie policzy to plik C).
 
 **Dostawa** [hipoteza]. Kupujący zapłacili za dostawę najwyżej 587,44 zł brutto, a opłaty za dostawę wyniosły 269,92 zł brutto. Z Z5 wynika, że dostawa daje ok. +4,61 zł netto na zamówieniu, a po prowizji od dostawy (11,5% × 10,49 = 1,21 zł) ok. +3,40 zł. Przy ofercie ze Smart! i darmowej dostawie ta nadwyżka znika. Sprawdź w A9, czy opłaty za dostawę obejmują opłaty Smart!.
 
@@ -84,16 +86,18 @@ Wzór: marża konta = 3 271,48 − 1 025,50 − koszt zakupu − 56 × 1,50. Mar
 - gdy cena + 10,49 zł ≤ 110 zł: **floor = 1,433 × (X + 5,42 + M) − 10,49**;
 - gdy cena + 10,49 zł > 110 zł: **floor = 1,355 × (X + 9,82 + M) − 10,49**.
 
-X to koszt zakupu netto. Przy M = 3 zł daje to floor = 1,433·X + 1,57 zł albo 1,355·X + 6,88 zł. Tabela dla 21 SKU jest w sekcji 6. Bez pliku C nie umiem wskazać SKU sprzedawanych poniżej floor. Podaję za to maksymalny koszt zakupu, przy którym obecna cena jest jeszcze rentowna.
+X to koszt zakupu netto. Przy M = 3 zł daje to floor = 1,433·X + 1,57 zł albo 1,355·X + 6,88 zł. X liczę z zarobku na rękę: X = Q × 0,88 / (0,88 + k).
+
+Z tego wynika zapas cenowy. Przy 30% na rękę oferty od ok. 30 zł mają floor 13–25% poniżej obecnej ceny, a przy 120% 49–57%. Poniżej floor z marżą 3 zł są przy 30%: gogle za 2 zł, nakolanniki i okulary Univet; polo Elevate (0,5% zapasu) i Ansell 16-500 (2,9%) są na granicy. Przy 120% poniżej floor są tylko gogle. Wszystkie zachowują dodatnią marżę, bo k ≥ 30%. Tabela dla 21 SKU jest w sekcji 6.
 
 ### B. Allegro Ads i Wyróżnienia
 
 **Ads (KS-Ads, rynek PL, 30.08–29.09):**
 - Koszt wyniósł 194,41 zł, a sprzedaż z reklam 96,94 zł. ROAS = 96,94 / 194,41 = 0,50. ACOS = 194,41 / 96,94 = 200,5%.
-- Rentowność wymaga ACOS niższego niż m%, czyli 12–29%. ROAS 0,50 leży 7–17 razy poniżej progu opłacalności (3,45–8,41). Reklama traci pieniądze nawet przy 100% marży, bo próg wynosiłby wtedy 1,0.
+- Rentowność wymaga ACOS niższego niż m%, czyli 19,3–43,8%. ROAS 0,50 leży 5–10 razy poniżej progu opłacalności (2,28–5,18). Reklama traciłaby pieniądze nawet przy marży równej 100% przychodu, bo próg wynosiłby wtedy 1,0.
 - Grupa reklam istnieje od 11.09, czyli przez 19 dni okna. Wydatek: 194,41 / 19 = 10,23 zł dziennie przy budżecie 20 zł, czyli 51% budżetu. W pełnym miesiącu to ok. 307 zł brutto (250 zł netto), a przy pełnym wykorzystaniu budżetu do 600 zł brutto. Zakładam, że przed 11.09 nie było innej grupy [hipoteza].
 - Kliknięcia przy minimalnych stawkach CPC: 194,41 / 0,80 = 243, a przy 0,65 zł do 299; przy CPC 1,00 zł byłoby ich 194. Sprzedaż z reklam to ok. 96,94 / 55,22 = 1,76 transakcji. Konwersja z reklam wynosi więc ok. **0,6–0,9%** wobec 2,24% dla całego konta [hipoteza; dokładna wartość jest w B1]. Jedna transakcja z reklamy kosztuje ok. 194,41 / 1,76 = **110,74 zł brutto** przy średniej wartości transakcji 55,22 zł.
-- maxCPC = 1,23 × m × konwersja. Przy marży 6,95–16,92 zł na zamówienie i konwersji z reklam 0,6–0,9% maxCPC wynosi **0,05–0,19 zł**. Minimum w wynikach wyszukiwania to 0,80 zł [fakt Allegro, KS-P]. Nawet przy konwersji organicznej 2,24% maxCPC wynosi 0,19–0,47 zł. Ads może działać tylko na ofercie, której konwersja z reklam przekracza 0,65 zł / m (m w zł netto na transakcję), np. ≥ 6,3% przy m = 10,36 zł.
+- maxCPC = 1,23 × m × konwersja. Przy marży 11,28–25,59 zł na zamówienie i konwersji z reklam 0,6–0,9% maxCPC wynosi **0,08–0,28 zł**. Minimum w wynikach wyszukiwania to 0,80 zł [fakt Allegro, KS-P]. Nawet przy konwersji organicznej 2,24% maxCPC wynosi 0,31–0,71 zł. Ads może działać tylko na ofercie, której konwersja z reklam przekracza 0,65 zł / m (m w zł netto na transakcję), np. ≥ 6,3% przy m = 10,36 zł.
 - Typ kampanii (Express czy Pro), lista reklamowanych ofert i miejsca emisji: brak danych (brak B1–B3). Dlatego decyzję podejmuję dla całej grupy.
 
 **Spadek konwersji (H3) wyjaśnia ruch z reklam** [hipoteza, mocno wsparta danymi]. Po odjęciu 194–299 kliknięć i ok. 2 transakcji z reklam konwersja organiczna wynosi 51 / (2 366 − 299) = 2,47% do 51 / (2 366 − 194) = 2,35%. W poprzednim okresie wynosiła 34 / 1 425 = 2,39%. Konwersja bez reklam stoi więc w miejscu. Kandydat na główne źródło płatnego ruchu bez sprzedaży to buty Elten Reaction S3 r.47: 124 wizyty, czyli 5,2% wszystkich wizyt konta, i 1 transakcja (sprawdź w B1).
@@ -114,25 +118,27 @@ Gdyby 202,16 zł było w całości opłatami za Wyróżnienia, wrzesień miałby
 
 **Ile Wyróżnienia mogły sprzedać.** Pięć ofert z największą wartością sprzedaży w 30 dniach ma od 149 do 195,77 zł (KS-A). Każda inna oferta sprzedała więc za co najwyżej 149 zł. Stąd górna granica sztuk = podłoga z (149 zł / cena) (OBL). Wynik: Bata Scoria i Helly Hansen Magni sprzedały 0 sztuk, a 13 wyróżnionych ofert razem najwyżej 20 sztuk za najwyżej 1 192 zł.
 
-**Próg opłacalności każdego Wyróżnienia** (OBL). Dodatkowe sztuki na 30 dni = 3 × (19,90 / 1,23) / (m0 − 0,75 × P), przy S0 = 0, czyli w wariancie najkorzystniejszym dla Wyróżnienia. m0 = (cena + 10,49) / 1,23 − X − 1,50 − 3,92 − P, gdzie X = (1 − g) × cena / 1,23.
+**Próg opłacalności każdego Wyróżnienia** (OBL). Dodatkowe sztuki na 30 dni = 3 × (19,90 / 1,23) / (m0 − 0,75 × P), przy S0 = 0, czyli w wariancie najkorzystniejszym dla Wyróżnienia. m0 = Q × k / (0,88 + k) (Z3, przed PIT 12%).
 
-| Oferta | Cena | P | 0,75 × P | m0 przy g=25% | Potrzeba szt./30 d (g=25%) | m0 przy g=45% | Potrzeba szt./30 d (g=45%) | Sprzedaż w 30 d (górna granica) | Decyzja |
+| Oferta | Cena | P | 0,75 × P | m0 przy 30% | Potrzeba szt./30 d (30%) | m0 przy 120% | Potrzeba szt./30 d (120%) | Sprzedaż w 30 d (górna granica) | Decyzja |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| Kurtka Helly Hansen Magni Shell | 995,00 | 79,81 | 59,86 | 125,53 | 0,7 | 287,32 | 0,2 | 0 | wyłącz dziś |
-| Buty spawacza Bata Scoria | 375,00 | 33,31 | 24,98 | 46,02 | 2,3 | 106,99 | 0,6 | 0 | wyłącz dziś |
-| Kamizelka chłodząca (1) | 75,00 | 9,83 | 7,37 | 8,52 | 42,2 | 20,72 | 3,6 | ≤1 | wyłącz dziś (poza sezonem) |
-| Kamizelka chłodząca (2) | 75,00 | 9,83 | 7,37 | 8,52 | 42,2 | 20,72 | 3,6 | ≤1 | wyłącz dziś (poza sezonem) |
-| Szorty Purework | 30,00 | 4,66 | 3,49 | 4,55 | 45,8 | 9,43 | 8,2 | ≤4 | wyłącz dziś (poza sezonem) |
-| Buty Garsport Kele S3 | 149,00 | 16,36 | 12,27 | 17,03 | 10,2 | 41,26 | 1,7 | ≤1 | etap 2 |
-| Buty Python Fresh S3 | 119,00 | 14,11 | 10,58 | 13,18 | 18,7 | 32,53 | 2,2 | ≤1 | etap 2 |
-| Rękawice Heatbeater | 95,75 | 12,22 | 9,16 | 10,35 | 40,8 | 25,92 | 2,9 | ≤1 | etap 2 |
-| Ogrodniczki BP 1844 | 95,00 | 12,13 | 9,10 | 10,29 | 40,8 | 25,73 | 2,9 | ≤1 | etap 2 |
-| Jeansy JMP Dixon | 75,00 | 9,83 | 7,37 | 8,52 | 42,2 | 20,72 | 3,6 | ≤1 | etap 2 |
-| Okulary Honeywell SP1000 | 56,95 | 7,76 | 5,82 | 6,93 | 43,6 | 16,19 | 4,7 | ≤2 | etap 2 |
-| Kurtka BP 1884 | 45,00 | 6,38 | 4,79 | 5,87 | 44,6 | 13,19 | 5,8 | ≤3 | etap 2 |
-| Spodnie T'RIFFIC 862 | 34,95 | 5,23 | 3,92 | 4,99 | 45,4 | 10,67 | 7,2 | ≤4 | etap 2 |
+| Kurtka Helly Hansen Magni Shell | 995,00 | 79,81 | 59,86 | 186,16 | 0,38 | 422,45 | 0,13 | 0 | wyłącz dziś; test 10 dni w listopadzie (sekcja 4) |
+| Buty spawacza Bata Scoria | 375,00 | 33,31 | 24,98 | 69,83 | 1,08 | 158,47 | 0,36 | 0 | wyłącz dziś |
+| Kamizelka chłodząca (1) | 75,00 | 9,83 | 7,37 | 13,79 | 7,56 | 31,30 | 2,03 | ≤1 | wyłącz dziś (poza sezonem) |
+| Kamizelka chłodząca (2) | 75,00 | 9,83 | 7,37 | 13,79 | 7,56 | 31,30 | 2,03 | ≤1 | wyłącz dziś (poza sezonem) |
+| Szorty Purework | 30,00 | 4,66 | 3,49 | 5,81 | 20,96 | 13,18 | 5,01 | ≤4 | wyłącz dziś (poza sezonem) |
+| Buty Garsport Kele S3 | 149,00 | 16,36 | 12,27 | 27,43 | 3,20 | 62,24 | **0,97** | ≤1 | etap 2 (na progu przy ≥114%) |
+| Buty Python Fresh S3 | 119,00 | 14,11 | 10,58 | 21,80 | 4,33 | 49,47 | 1,25 | ≤1 | etap 2 |
+| Rękawice Heatbeater | 95,75 | 12,22 | 9,16 | 17,48 | 5,84 | 39,66 | 1,59 | ≤1 | etap 2 |
+| Ogrodniczki BP 1844 | 95,00 | 12,13 | 9,10 | 17,34 | 5,89 | 39,35 | 1,60 | ≤1 | etap 2 |
+| Jeansy JMP Dixon | 75,00 | 9,83 | 7,37 | 13,79 | 7,56 | 31,30 | 2,03 | ≤1 | etap 2 |
+| Okulary Honeywell SP1000 | 56,95 | 7,76 | 5,82 | 10,59 | 10,17 | 24,03 | 2,66 | ≤2 | etap 2 |
+| Kurtka BP 1884 | 45,00 | 6,38 | 4,79 | 8,47 | 13,18 | 19,22 | 3,36 | ≤3 | etap 2 |
+| Spodnie T'RIFFIC 862 | 34,95 | 5,23 | 3,92 | 6,69 | 17,54 | 15,17 | 4,31 | ≤4 | etap 2 |
 
-**Wniosek.** Wszystkie 13 Wyróżnień potrzebuje więcej *dodatkowych* sztuk, niż oferta sprzedała *łącznie*, nawet przy marży 45% i założeniu, że Wyróżnienie nie zwiększyło sprzedaży bazowej. Dla ofert tańszych niż ok. 100 zł dodatkowa prowizja 0,75 × P zabiera 77–89% marży z każdej sprzedaży (przy g = 25%). Razem z opłatą 19,90 zł za 10 dni Wyróżnienie na takiej ofercie przynosi stratę przy każdym poziomie sprzedaży widocznym w danych. Pewność: wysoka po stronie kosztów, średnia co do sprzedaży (dane 30-dniowe, a Wyróżnienia mogły działać krócej). Etap 2 wynika z licznika zamówień Super Sprzedawcy (sekcja 2C), nie z rentowności.
+**Wniosek.** 12 z 13 Wyróżnień potrzebuje więcej *dodatkowych* sztuk, niż oferta sprzedała *łącznie*, nawet przy 120% na rękę i założeniu, że Wyróżnienie nie zwiększyło sprzedaży bazowej. Wyjątek to Garsport Kele: przy zarobku ≥114% wystarczy 0,97 dodatkowej sztuki, a oferta sprzedała najwyżej 1. Zwraca się więc tylko wtedy, gdy ta jedna sprzedaż była wyłącznie efektem Wyróżnienia; to mało prawdopodobne, więc zostaje w etapie 2. Przy 30% na rękę dodatkowa prowizja zabiera 52–60% marży z każdej sprzedaży ofert tańszych niż ok. 100 zł. Przy PIT 32% progi spadają o ok. 12–15%, a przy 120% na próg zbliżają się też BP 1884 (2,95 wobec ≤3) i T'RIFFIC (3,77 wobec ≤4); to nie zmienia decyzji, bo górna granica sprzedaży zawiera sprzedaż bazową. Pewność: wysoka po stronie kosztów, średnia co do sprzedaży (dane 30-dniowe, a Wyróżnienia mogły działać krócej). Etap 2 wynika z licznika zamówień Super Sprzedawcy (sekcja 2C), nie z rentowności.
+
+**Wyjątek warunkowy: Helly Hansen Magni Shell** [hipoteza]. Jedna sprzedaż daje 126–363 zł marży po dodatkowej prowizji, czyli pokrywa 8–22 cykli Wyróżnienia (16,18 zł netto każdy). Wyróżnienie opłaca się, jeśli zwiększa szansę sprzedaży w ciągu 10 dni o co najmniej 4,5–12,8 punktu procentowego. W 30 dniach oferta nie sprzedała nic, więc teraz je wyłącz. W sezonie zrób jeden 10-dniowy test (sekcja 4). Dla Bata Scoria próg wynosi 12–36 p.p., a buty spawalnicze nie mają sezonu zimowego, więc bez testu.
 
 **Kanibalizacja kotwic** [hipoteza]. Honeywell SP1000 ma Gwarancję najniższej ceny, a GNC samo zwiększa szansę na Top ofertę [fakt Allegro]. Płatne Wyróżnienie na takiej ofercie dubluje bezpłatną przewagę i dolicza 5,82 zł prowizji od każdej sprzedaży. Nakolanniki nie są wyróżnione (KS-Ads) i mają najlepszą konwersję na koncie (12,1%). Nie zmieniaj tego.
 
@@ -231,6 +237,7 @@ Utrata zamówień w realnym wariancie zakłada, że oferta sprzedaje połowę sw
 2. Koszyk 45–49,89 zł dostaje darmową dostawę Smart! tylko u kupujących ze starszą subskrypcją, a poniżej 45 zł u nikogo [fakt Allegro]. Zestawy elastyczne i wielopaki podnoszące koszyk powyżej 49,90 zł mają sens dopiero wtedy, gdy oferty mają Smart!.
 3. Nakolanniki sprzedawały się średnio po 195,77 / 23 = 8,51 zł za parę, a nie po 9,49 zł. W okresie musiała być niższa cena albo rabat [hipoteza]. Ma to znaczenie przy zgłoszeniu do Allegro Days, bo obniżka liczy się od najniższej ceny z 30 dni (sprawdź w A10).
 4. Udział Top oferty, luki cenowe i oferty, gdzie obniżka o 1–3% dałaby Top ofertę lub GNC: brak danych (brak A17, A19, K1).
+5. Zapas cenowy jest duży (sekcja 2A). Obniżka o 5% na bucie za 149 zł wymaga wzrostu sprzedaży o 10% (przy 120% na rękę) do 25% (przy 30%), żeby zysk się nie zmienił. Według Allegro Top oferta sprzedaje do 5× więcej niż pozostałe oferty produktu, a GNC daje ok. 150% wyższą sprzedaż [fakt Allegro, deklaracje marketingowe]. Walka ceną o Top ofertę ma więc sens na ofertach od ok. 30 zł, ale tylko tam, gdzie luka do Top oferty jest mała (A19, K1).
 
 Pewność: niska.
 
@@ -265,7 +272,7 @@ Plan zebrania danych jest w sekcji 8. Pewność: niska.
 
 Abonament Podstawowy kosztuje 49 zł brutto, czyli 39,84 zł netto i 1,2% obrotu. Daje raporty Top oferty dla własnego konta [fakt Allegro], ale nic nie wskazuje, że są czytane: w kontekście nie ma ani jednej liczby z A17–A19.
 
-Profesjonalny kosztuje 199 zł brutto (161,79 zł netto). Zwróciłby się dopiero przy 10–23 dodatkowych zamówieniach miesięcznie wynikających wyłącznie z danych całego Allegro (161,79 zł / 6,95–16,92 zł). Przy 56 zamówieniach miesięcznie to nierealne. **Nie kupuj Profesjonalnego.** Wróć do tej decyzji przy ≥150 zamówieniach miesięcznie albo przy planie rozbudowy asortymentu, gdzie potrzebne są dane rynkowe. Bezpłatne automatyzacje i cotygodniowa rutyna są w sekcji 10. Pewność: wysoka.
+Profesjonalny kosztuje 199 zł brutto (161,79 zł netto). Zwróciłby się dopiero przy 6–14 dodatkowych zamówieniach miesięcznie wynikających wyłącznie z danych całego Allegro (161,79 zł / 11,28–25,59 zł). Przy 56 zamówieniach miesięcznie to nierealne. **Nie kupuj Profesjonalnego.** Wróć do tej decyzji przy ≥150 zamówieniach miesięcznie albo przy planie rozbudowy asortymentu, gdzie potrzebne są dane rynkowe. Bezpłatne automatyzacje i cotygodniowa rutyna są w sekcji 10. Pewność: wysoka.
 
 ### J. Ryzyka i zgodność
 
@@ -307,61 +314,62 @@ Wszystkie działania wykonuje właściciel (1 osoba) w Sales Center lub w panelu
 
 | Nr | Działanie (czynność w panelu) | Obszar | Horyzont | Efekt zł/mies. | Koszt | Czas wdrożenia | Jak zmierzyć | Ocena po | Pewność |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Allegro Ads → Kampanie → wstrzymaj grupę z 11.09 (14-dniowy test inkrementalności) | B | dziś | +135 do +250 | 0 zł | 5 min | CF „Reklama i promowanie” za październik; sprzedaż całkowita A2 z 14 dni po wobec 14 dni przed (te same dni tygodnia); alarm, jeśli spadek > 20% | 14 dni (17.10), 28 dni (31.10) | wysoka |
-| 2 | Moje oferty → filtr ofert promowanych → wyłącz Wyróżnienie (odnawianie) w: Helly Hansen Magni Shell, Bata Scoria, 2× kamizelka chłodząca, szorty Purework | B | dziś | +50 do +243 | 0 zł (bieżący cykl nie wraca [praktyka ekspercka]) | 10 min | A9: brak nowych opłat za Wyróżnienie dla tych ofert; sprzedaż tych 5 ofert w A1 | 14 dni | wysoka |
-| 3 | Wyłącz Wyróżnienie w pozostałych 8 ofertach (T'RIFFIC 862, JMP Dixon, Honeywell SP1000, Garsport Kele, Heatbeater, BP 1884, Python Fresh, BP 1844) w dniu, gdy licznik zamówień w panelu programu Super Sprzedawca pokaże ≥58 | B, C | dziś–30 dni | +60 do +440 | 0 zł | 10 min + 1 min dziennie na odczyt licznika | jak w nr 2; licznik nie spada poniżej 55 w 14 dni po wyłączeniu | 14 dni od wyłączenia | wysoka (koszt), średnia (termin) |
+| 1 | Allegro Ads → Kampanie → wstrzymaj grupę z 11.09 (14-dniowy test inkrementalności) | B | dziś | +124 do +250 | 0 zł | 5 min | CF „Reklama i promowanie” za październik; sprzedaż całkowita A2 z 14 dni po wobec 14 dni przed (te same dni tygodnia); alarm, jeśli spadek > 15% | 14 dni (17.10), 28 dni (31.10) | wysoka |
+| 2 | Moje oferty → filtr ofert promowanych → wyłącz Wyróżnienie (odnawianie) w: Helly Hansen Magni Shell, Bata Scoria, 2× kamizelka chłodząca, szorty Purework | B | dziś | +34 do +243 | 0 zł (bieżący cykl nie wraca [praktyka ekspercka]) | 10 min | A9: brak nowych opłat za Wyróżnienie dla tych ofert; sprzedaż tych 5 ofert w A1 | 14 dni | wysoka |
+| 3 | Wyłącz Wyróżnienie w pozostałych 8 ofertach (T'RIFFIC 862, JMP Dixon, Honeywell SP1000, Garsport Kele, Heatbeater, BP 1884, Python Fresh, BP 1844) w dniu, gdy licznik zamówień w panelu programu Super Sprzedawca pokaże ≥58 | B, C | dziś–30 dni | +49 do +436 | 0 zł | 10 min + 1 min dziennie na odczyt licznika | jak w nr 2; licznik nie spada poniżej 55 w 14 dni po wyłączeniu | 14 dni od wyłączenia | wysoka (koszt), średnia (termin) |
 | 4 | Zamówienia → zwroty z sierpnia i września → przy każdym sprawdź rabat transakcyjny; brakujące złóż ręcznie (limit 45 dni od zwrotu) | A | dziś | +10 do +28 i jednorazowo do ok. 30 | 0 zł | 30 min | stopa odzysku = rabaty / prowizje od zwrotów (A9) ≥ 90% | 14 dni | średnia |
 | 5 | Zwroty: po odebraniu paczki zwrotnej zlecaj zwrot wpłaty tego samego dnia; jeśli konto ma opcję automatycznego zwrotu po odebraniu paczki, włącz ją | C | dziś | ochronne: +20 pkt (80 → 100) | 0 zł | 5 min | panel jakości: Szybkie zwroty wpłat = 100 pkt, średnia ≤ 1 dzień | 30 dni (okno) | wysoka |
 | 6 | Asortyment → „Aktualizacje ofert”: zaakceptuj lub popraw niespójności z Katalogiem (marka/producent) przed upływem 14 dni; „Mój asortyment”: oferty bez produktu lub z ostrzeżeniem | D | dziś | ochronne (oferta zakończona = 0 sprzedaży) | 0 zł | 20 min | 0 pozycji w panelu; 0 ofert zakończonych przez Allegro | 7 dni | wysoka |
 | 7 | Ustawienia → Obowiązki prawne: sprawdź numery EPR dla PL, CZ, SK, HU; brak numeru dla kraju = usuń metody dostawy do tego kraju z cennika do czasu rejestracji | J, H | dziś | ryzyko kar; −(marża z rynku) | 0 zł (rejestracja: brak danych o koszcie) | 30 min | komplet numerów albo wyłączony rynek | 7 dni | wysoka |
 | 8 | Ustawienia dostawy: godzina graniczna wysyłki tego dnia = ostatnie realne nadanie − 1 h; cykle pakowania 7:30, 13:00 i 18:30, ostatnie nadanie wieczorem w automacie; sobota 1 cykl (sekcja 7); towar spoza magazynu: realny czas wysyłki | C | dziś–7 dni | ochronne: +39 do +79 pkt (Szybka wysyłka) i +25 pkt (W terminie) | 20–40 min dziennie | 1 h ustawienia | panel: Szybka wysyłka ≥40% po 14 dniach, ≥54% po 28; W terminie ≥95% (≤2 spóźnienia / 28 dni) | 14 i 28 dni | średnia |
 | 9 | Moje oferty → eksport (A10) → filtr category_id; oferty w „Pozostałe” (17%) lub w złym dziale przenieś do Firma i usługi > Przemysł > Odzież robocza i BHP, jeśli połączenie z Katalogiem zostaje | A | dziś–7 dni | 0 do +40 | 0 zł | 1–2 h | efektywna prowizja netto per oferta (A9) ≈ 11,5% lub mniej | 30 dni | niska (nie wiem, ile ofert dotyczy) |
-| 10 | Kampanie → Allegro Days 5–18.10: zgłoś nakolanniki, fartuch BP, Ansell 48-205, polo Elevate, jeśli są na Liście towarów i przechodzą test marży (sekcja 6) | E, C | do 18.10 | 0 do +60; +2 do +6 zamówień do licznika | rabat ≥5% od najniższej ceny z 30 dni | 30 min | zysk z kampanii = Q_k × m_k − Q_0 × m_0 (A1, 14 dni przed) | 14 dni po kampanii | niska |
+| 10 | Kampanie → Allegro Days 5–18.10: zgłoś nakolanniki, fartuch BP, Ansell 48-205, polo Elevate, jeśli są na Liście towarów (nakolanniki: −5% wychodzi na zero przy każdym zarobku ≥30%, z marżą 3 zł od 56%; sekcja 6) | E, C | do 18.10 | 0 do +60; +2 do +6 zamówień do licznika | rabat ≥5% od najniższej ceny z 30 dni | 30 min | zysk z kampanii = Q_k × m_k − Q_0 × m_0 (A1, 14 dni przed) | 14 dni po kampanii | niska |
 | 11 | W każdej ofercie: stawka VAT 23% i „faktura VAT”; rabat hurtowy na nakolanniki, gogle, okulary, rękawice, fartuchy (≥5% od progu kategorii) | H | 30 dni | 0 do +100 | rabat ≥5% od sztuk powyżej progu | 2 h | zamówienia firmowe (filtr Allegro Business w zamówieniach); prowizja od zamówień z rabatem hurtowym | 30 i 60 dni | niska |
 | 12 | Tytuły i parametry 20 ofert (sekcja 5): najpierw zimowe i duplikaty bez rozmiaru; rozmiar, kod producenta, GTIN, kolor, normy z deklaracji zgodności | D | 30 dni | +10 do +60 | 0 zł | 6–8 h | wizyty i konwersja tych 20 ofert, 28 dni po wobec 28 dni przed (A1); kompletność parametrów 100% | 28 dni | średnia |
-| 13 | Wielopaki: cena za sztukę w „10 / 20 par nakolanników” i „20 par gogli” ≤ cena oferty pojedynczej; wielopak jako „Zestaw X sztuk” w produkcie z Katalogu; nowy wielopak Honeywell SP1000 obok oferty z GNC | E, G | 30 dni | 0 do +80 | niższa cena za sztukę | 2 h | wizyty wielopaków (A1) > 10 na 30 dni; sprzedaż wielopaków | 30 dni | niska |
-| 14 | Smart!: sprawdź status ofert; jeśli go brak, utwórz osobny cennik z pełnym pakietem Allegro Delivery dla 20–30 ofert ≥49,90 zł (test), reszta bez zmian | E | 30 dni | brak danych do wyceny (od −50 do +150 [hipoteza]) | opłata Smart! 1,99–7,99 zł i utracona dostawa na zamówieniach ≥49,90 zł | 2 h | konwersja ofert testowych wobec kontrolnych, 28 dni; marża na zamówienie | 28 dni | niska |
-| 15 | Reguły cenowe (bezpłatne) „Top oferta” lub „Najniższa cena na Allegro” dla 20 SKU z widełkami min = floor, max = cena +10% (sekcja 6); nie zmieniaj cen plikiem w tych ofertach | E | 30 dni (po pliku C) | 0 do +100 | 0 zł | 3 h | udział transakcji z Top ofertą (A17); marża po zmianie ceny | 28 dni | niska |
+| 13 | Wielopaki: cena za parę w „10 / 20 par nakolanników” ≤ cena pojedynczej, jeśli zarobek na nakolannikach ≥37%; „20 par gogli” zostaw bez obniżki (2 zł za sztukę wymaga zarobku ≥129%); wielopak jako „Zestaw X sztuk” w produkcie z Katalogu; nowy wielopak 5 szt. Honeywell SP1000 obok oferty z GNC | E, G | 30 dni | 0 do +80 | niższa cena za sztukę | 2 h | wizyty wielopaków (A1) > 10 na 30 dni; sprzedaż wielopaków | 30 dni | niska |
+| 14 | Smart!: sprawdź status ofert; jeśli go brak, utwórz osobny cennik z pełnym pakietem Allegro Delivery dla 20–30 ofert od ok. 100 zł z najwyższym zarobkiem na rękę (test), reszta bez zmian | E | 30 dni | brak danych do wyceny (od −50 do +150 [hipoteza]); na produkcie za 120 zł opłaca się przy wzroście sprzedaży o 34–139% | opłata Smart! 1,99–7,99 zł i utracona dostawa na zamówieniach ≥49,90 zł | 2 h | konwersja ofert testowych wobec kontrolnych, 28 dni; marża na zamówienie | 28 dni | niska |
+| 15 | Reguły cenowe (bezpłatne) „Top oferta” lub „Najniższa cena na Allegro” dla ofert od 30 zł z widełkami min = floor przy 30% na rękę (bezpieczny do czasu pliku C), max = cena +10% (sekcja 6); nie zmieniaj cen plikiem w tych ofertach | E | 30 dni (nie trzeba czekać na plik C) | 0 do +150 [hipoteza] | 0 zł | 3 h | udział transakcji z Top ofertą (A17); marża po zmianie ceny | 28 dni | niska |
 
-Działania 1–3 dają razem **+245 do +933 zł netto miesięcznie**. Dolna granica to koszty z września minus utracona marża, górna to koszty w tempie bieżącym.
+Działania 1–3 dają razem **+207 do +929 zł miesięcznie przed PIT**. Dolna granica to koszty z września minus utracona marża (przy 120% na rękę, gdzie utracona marża jest największa), górna to koszty w tempie bieżącym.
 
 **Jak policzyłem efekt w 90 dni** (OBL):
 
 | Składnik | Wzór | Kwota |
 |---|---|---:|
-| Pauza Ads | 3 mies. × (135 do 250 zł) | 405–750 zł |
-| 5 Wyróżnień | 3 × (50 do 243 zł) | 150–729 zł |
-| 8 Wyróżnień | 0 (licznik nie dojdzie do 58) do 2,5 mies. × 440 zł | 0–1 100 zł |
+| Pauza Ads | 3 mies. × (124 do 250 zł) | 371–749 zł |
+| 5 Wyróżnień | 3 × (34 do 243 zł) | 103–728 zł |
+| 8 Wyróżnień | 0 (licznik nie dojdzie do 58) do 2,5 mies. × 436 zł | 0–1 089 zł |
 | Rabaty transakcyjne | 3 × (10 do 28 zł) + jednorazowo 0–30 zł | 30–114 zł |
-| Wzrost sprzedaży (TOP 9–15) | 0–25% więcej zamówień (0–14 / mies.) × 6,95–16,92 zł × średnio 1,5 mies. | 0–355 zł |
-| **Razem** | | **ok. 600–3 050 zł** |
+| Wzrost sprzedaży (TOP 9–15) | 0–25% więcej zamówień (0–14 / mies.) × 11,28–25,59 zł × średnio 1,5 mies. | 0–537 zł |
+| **Razem (przed PIT)** | | **ok. 500–3 220 zł** |
+| **Na rękę po PIT 12%** | × 0,88 | **ok. 440–2 830 zł** |
 
 ---
 
 ## 4. Allegro Ads
 
-**Do wyłączenia dziś: cała grupa reklam.** Nie mam B1/B3, więc nie wiem, które oferty są reklamowane. Grupa jako całość ma ROAS 0,50 przy progu opłacalności 3,45–8,41. Jeśli z jakiegoś powodu nie chcesz wstrzymywać całości, wyklucz z grupy co najmniej:
+**Do wyłączenia dziś: cała grupa reklam.** Nie mam B1/B3, więc nie wiem, które oferty są reklamowane. Grupa jako całość ma ROAS 0,50 przy progu opłacalności 2,28–5,18. Jeśli z jakiegoś powodu nie chcesz wstrzymywać całości, wyklucz z grupy co najmniej:
 - wszystkie 13 ofert z Wyróżnieniem (dublowanie);
 - Elten Reaction S3 r.47, jeśli jest w grupie (124 wizyty, 1 sprzedaż);
 - wszystkie oferty powyżej 110 zł bez sprzedaży w 30 dni;
 - oferty poza sezonem (kamizelki chłodzące, szorty);
 - oferty z mniej niż 2 sprzedażami w 30 dni.
 
-**Test inkrementalności** (od 03.10). Porównaj sprzedaż całkowitą z A2 za 03–16.10 z 19.09–02.10, w tych samych dniach tygodnia. Koryguj o trend kategorii z wykresu „Firma i usługi” w Analytics. Wstrzymanie Ads i 5 Wyróżnień jest błędem dopiero wtedy, gdy sprzedaż spadnie o więcej niż ok. **20% obrotu** (najmniejsza oszczędność kosztów 158,06 + 63,20 = 221 zł netto / najwyższa marża 29% = 763 zł netto = 939 zł brutto miesięcznie, czyli 23% obrotu; przyjmuję 20% z zapasem; OBL). Mniejszy spadek oznacza, że pauza i tak się opłaca. Uwaga: od 5.10 trwa Allegro Days, więc odczytuj wynik ostrożnie.
+**Test inkrementalności** (od 03.10). Porównaj sprzedaż całkowitą z A2 za 03–16.10 z 19.09–02.10, w tych samych dniach tygodnia. Koryguj o trend kategorii z wykresu „Firma i usługi” w Analytics. Wstrzymanie Ads i 5 Wyróżnień jest błędem dopiero wtedy, gdy sprzedaż spadnie o więcej niż ok. **15% obrotu** (najmniejsza oszczędność kosztów 158,06 + 63,20 = 221 zł netto / najwyższa marża 43,8% = 505 zł netto = 621 zł brutto miesięcznie, czyli 15,4% obrotu; OBL). Mniejszy spadek oznacza, że pauza i tak się opłaca. Uwaga: od 5.10 trwa Allegro Days, więc odczytuj wynik ostrożnie.
 
 **Warunek wejścia przed ponownym włączeniem Ads** (nie wcześniej niż 31.10). Oferta może trafić do reklamy, gdy:
 1. 1,23 × m × konwersja ≥ 0,80 zł, czyli minimalne CPC w wynikach wyszukiwania [fakt Allegro];
 2. oferta ma ≥4 transakcje w 30 dni bez reklamy;
 3. oferta nie jest wyróżniona.
 
-Dla nakolanników (konwersja 12,1%, m na transakcję = 18,98 − 2,875 × X) warunek jest spełniony przy X ≤ 4,73 zł za parę, jeśli konwersja z reklam zbliży się do organicznej. Dla fartucha BP (konwersja 9,3%, m = 29,74 − 1,75 × X) przy X ≤ 13,00 zł za sztukę. Oba progi policz z kosztami z pliku C.
+Nakolanniki (konwersja 12,1%, transakcja 2,875 pary): warunek wymaga zarobku na rękę ≥35%, ale tylko jeśli konwersja z reklam dorówna organicznej. Przy połowie organicznej potrzeba ≥114%. Fartuch BP (konwersja 9,3%, transakcja 1,75 szt.): ≥27% przy konwersji organicznej i ≥78% przy połowie. **Wniosek:** jedyny realny kandydat do testu to fartuch BP, jeśli ma zarobek na rękę ≥80%. Nakolanniki tylko wtedy, gdy konwersja z reklam w pierwszych 7 dniach wyjdzie ≥10%.
 
 **Nowa struktura** (tylko jeśli test i warunek wejścia przejdą; kampanie Pro, bo pozwalają wybrać oferty):
 
 | Kampania | Grupa | Oferty | Budżet dzienny | CPC | Miejsca emisji | ROAS_be | Ocena |
 |---|---|---|---|---|---|---|---|
-| Pro „Kotwice” | Bestsellery tanie | nakolanniki, fartuch medyczny BP męski, trzecia oferta z ≥4 transakcjami / 30 d | 3 zł (minimum [fakt Allegro]) | 0,80 zł wyszukiwanie, 0,65 zł pozostałe (minimum) | wszystkie 5 na start, po 7 dniach zostaw te z ROAS ≥ ROAS_be [fakt Allegro: zalecenie startu] | z C: (cena / 1,23) / m; przy m% 12–29% to 3,45–8,41 | T+7, T+14, T+28 |
-| Pro „Zima” (od 1.11) | Obuwie i kurtki zimowe | Bata Summ Boot Winter, Hakro Loft-Jacke, Heatbeater, tylko po poprawie tytułu i parametrów i ≥1 sprzedaży organicznej każdej | 5 zł | minimum | jak wyżej | z C; np. buty 149 zł przy g = 25%: 121,14 / 17,03 = 7,1 | T+7, T+14, T+28 |
+| Pro „Kotwice” | Bestsellery tanie | nakolanniki, fartuch medyczny BP męski, trzecia oferta z ≥4 transakcjami / 30 d | 3 zł (minimum [fakt Allegro]) | 0,80 zł wyszukiwanie, 0,65 zł pozostałe (minimum) | wszystkie 5 na start, po 7 dniach zostaw te z ROAS ≥ ROAS_be [fakt Allegro: zalecenie startu] | (cena / 1,23) / m; przy m% 19,3–43,8% to 2,28–5,18 | T+7, T+14, T+28 |
+| Pro „Zima” (od 1.11) | Obuwie i kurtki zimowe | Bata Summ Boot Winter, Hakro Loft-Jacke, Heatbeater, tylko po poprawie tytułu i parametrów i ≥1 sprzedaży organicznej każdej | 5 zł | minimum | jak wyżej | np. buty 149 zł: 121,14 / 27,43 = 4,4 (30% na rękę) do 121,14 / 62,24 = 1,9 (120%) | T+7, T+14, T+28 |
 | Long tail, nowości | — | nie reklamuj | 0 | — | — | — | — |
 
 **Zasady wykluczania** [praktyka ekspercka; progi „100 kliknięć / 10 sprzedaży” to hipoteza robocza]:
@@ -374,6 +382,8 @@ Dla nakolanników (konwersja 12,1%, m na transakcję = 18,98 − 2,875 × X) war
 - ROAS ≥ 1,3 × ROAS_be przez 14 dni i wydatek codziennie na limicie → budżet +20%;
 - wydatek < 50% budżetu → dodaj ofertę spełniającą warunek wejścia, nie podnoś CPC ponad maxCPC;
 - Ads Express nie ma sensu przy tej skali, bo nie widzisz kosztu per oferta.
+
+**Test sezonowy Wyróżnienia: Helly Hansen Magni Shell** [hipoteza]. W drugiej połowie listopada włącz jeden 10-dniowy cykl (19,90 zł) i nie odnawiaj go automatycznie. Warunki: oferta ma aktualny rozmiar, kolor i parametry, a jej cena z dostawą nie przegrywa z Top ofertą produktu (A19). Ocena po 10 dniach: jedna sprzedaż pokrywa 8–22 cykli; brak sprzedaży i wizyt mniej niż 2× więcej niż przed testem oznacza koniec testu.
 
 **Harmonogram ocen** (dla restartu w dniu T): T+7 (miejsca emisji, CTR), T+14 (pierwsze okno zamknięte), T+28 (decyzja: zostaw, skaluj, wyłącz).
 
@@ -397,7 +407,7 @@ Dla nakolanników (konwersja 12,1%, m na transakcję = 18,98 − 2,875 × X) war
 | Okulary Portwest PW13 | brak danych | brak danych | — | GNC, 4 oceny | reguła „Najniższa cena na Allegro”, min = floor | P3 |
 | Okulary Univet (9,49 zł) | brak danych | brak danych | — | poniżej 49,90 zł | pozycja w zestawie elastycznym | P3 |
 | Rękawice Ansell Edge 16-500 (15,99 zł) | brak danych | brak danych | — | poniżej 49,90 zł | rabat hurtowy | P3 |
-| Kurtka Helly Hansen Magni Shell (995 zł) | brak danych | 0 szt. | — | Wyróżnienie bez sprzedaży | wyłącz Wyróżnienie dziś; rozmiar i kolor w tytule | P1 |
+| Kurtka Helly Hansen Magni Shell (995 zł) | brak danych | 0 szt. | — | Wyróżnienie bez sprzedaży | wyłącz Wyróżnienie dziś; rozmiar i kolor w tytule; test 10 dni w listopadzie (sekcja 4) | P1 |
 | Buty spawacza Bata Scoria (375 zł) | brak danych | 0 szt. | — | Wyróżnienie bez sprzedaży | wyłącz Wyróżnienie dziś; normy w parametrach | P1 |
 | Kamizelka chłodząca ×2 (75 zł) | brak danych | ≤1 szt. | — | poza sezonem, wyróżnione | wyłącz Wyróżnienie dziś | P1 |
 | Szorty Purework (30 zł) | brak danych | ≤4 szt. | — | poza sezonem, wyróżnione | wyłącz Wyróżnienie dziś | P1 |
@@ -531,35 +541,37 @@ Zmierz stopę wieczorem, od pięty do najdłuższego palca, i dodaj [UZUPEŁNIJ 
 
 ## 6. Ceny i promocje
 
-**Tabela SKU** (OBL, Z4–Z7). Bez pliku C nie mam kosztu zakupu, więc zamiast floor podaję **maksymalny koszt zakupu netto X_max**, przy którym obecna cena jest rentowna. M = 0 to próg zerowy, M = 3 zł to minimalna marża na zamówienie jednosztukowe. Floor dla Twojego kosztu X liczysz wzorem z sekcji 2A. Cena całkowita = cena + 10,49 zł. Top oferta i luka cenowa: brak danych (K1, A19).
+**Tabela SKU** (OBL, Z3–Z7). Q = (cena + 10,49) / 1,23 − 1,50 − 3,92 − P, czyli to, co zostaje z zamówienia jednosztukowego po Allegro i wysyłce, a przed zakupem towaru. m to marża przed PIT przy zarobku na rękę 30% i 120%. Floor to cena, przy której marża przed PIT spada do M = 3 zł, przy koszcie zakupu wynikającym z Twojego zarobku. Cena całkowita = cena + 10,49 zł. Top oferta i luka cenowa: brak danych (K1, A19).
 
-| SKU | Cena | Cena całkowita | P | X_max (M=0) | X_max (M=3) | Top oferta / luka | Rekomendacja | Widełki reguły (po pliku C) |
-|---|---:|---:|---:|---:|---:|---|---|---|
-| Gogle EN166 (1 szt.) | 2,00 | 12,49 | 1,44 | 3,30 | 0,30 | brak danych | zostaw jako źródło zamówień, jeśli X ≤ 3,30; w koszyku z innym towarem marża ≈ 2 / 1,23 − X − 0,23 | bez reguły (cena < 5 zł) |
-| Nakolanniki (para) | 9,49 | 19,98 | 2,30 | 8,53 | 5,53 | brak danych | kotwica; bez rabatu ilościowego; Allegro Days przy X ≤ 5,20 (−5% od 9,49) | min = floor(X; M=3), max = 10,49 |
-| Okulary Univet | 9,49 | 19,98 | 2,30 | 8,53 | 5,53 | brak danych | do zestawu elastycznego | min = floor, max = 10,49 |
-| Polo damskie Elevate | 14,49 | 24,98 | 2,87 | 12,02 | 9,02 | brak danych | utrzymaj | min = floor, max = 15,99 |
-| Rękawice Ansell Edge 16-500 | 15,99 | 26,48 | 3,05 | 13,06 | 10,06 | brak danych | rabat hurtowy | min = floor, max = 17,49 |
-| Fartuch medyczny BP męski (śr.) | 22,79 | 33,28 | 3,83 | 17,81 | 14,81 | brak danych | kotwica; rabat hurtowy | min = floor, max = cena + 10% |
-| Szorty Purework | 30,00 | 40,49 | 4,66 | 22,84 | 19,84 | brak danych | poza sezonem, bez promocji | bez reguły do wiosny |
-| Spodnie T'RIFFIC 862 | 34,95 | 45,44 | 5,23 | 26,30 | 23,30 | brak danych | etap 2 Wyróżnienia | min = floor, max = 38,45 |
-| Kurtka BP 1884 | 45,00 | 55,49 | 6,38 | 33,31 | 30,31 | brak danych | etap 2 Wyróżnienia | min = floor, max = 49,49 |
-| Okulary Honeywell SP1000 | 56,95 | 67,44 | 7,76 | 41,65 | 38,65 | brak danych (A17) | GNC: reguła „Najniższa cena na Allegro” | min = floor, max = 56,95 (chroń GNC) |
-| Jeansy JMP Dixon | 75,00 | 85,49 | 9,83 | 54,25 | 51,25 | brak danych | etap 2 Wyróżnienia | min = floor, max = 82,49 |
-| Kamizelka chłodząca | 75,00 | 85,49 | 9,83 | 54,25 | 51,25 | brak danych | poza sezonem | bez reguły do wiosny |
-| Rękawice Ansell Edge 48-205 r.9 (śr.) | 85,00 | 95,49 | 10,98 | 61,23 | 58,23 | brak danych | rabat hurtowy | min = floor, max = 93,49 |
-| Ogrodniczki BP 1844 | 95,00 | 105,49 | 12,13 | 68,21 | 65,21 | brak danych | etap 2 Wyróżnienia | min = floor, max = 104,49 |
-| Rękawice Heatbeater | 95,75 | 106,24 | 12,22 | 68,74 | 65,74 | brak danych | sezon; parametry | min = floor, max = 105,29 |
-| Buty Python Fresh S3 | 119,00 | 129,49 | 14,11 | 85,75 | 82,75 | brak danych | etap 2 Wyróżnienia | min = floor, max = 130,89 |
-| Buty Garsport Kele S3 | 149,00 | 159,49 | 16,36 | 107,89 | 104,89 | brak danych | etap 2 Wyróżnienia | min = floor, max = 163,89 |
-| Buty Elten Reaction S3 r.47 | 149,00 | 159,49 | 16,36 | 107,89 | 104,89 | brak danych | strona oferty (sekcja 5) | min = floor, max = 163,89 |
-| Spodnie Fristads 288 r.50 | 170,00 | 180,49 | 17,94 | 123,38 | 120,38 | brak danych | utrzymaj | min = floor, max = 186,99 |
-| Buty spawacza Bata Scoria | 375,00 | 385,49 | 33,31 | 274,68 | 271,68 | brak danych | wyłącz Wyróżnienie | min = floor, max = 412,49 |
-| Kurtka Helly Hansen Magni Shell | 995,00 | 1 005,49 | 79,81 | 732,24 | 729,24 | brak danych | wyłącz Wyróżnienie; obecna cena jest przeceniona | min = floor, max = najniższa cena z 30 dni |
+| SKU | Cena | Cena całkowita | P | Q | m (30% / 120%) | Floor (30% / 120%) | Zapas do floor (30% / 120%) | Rekomendacja | Widełki reguły |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|
+| Gogle EN166 (1 szt.) | 2,00 | 12,49 | 1,44 | 3,30 | 0,84 / 1,90 | 5,10 / 3,57 | poniżej / poniżej | źródło zamówień; zarabiasz głównie na dopłacie do dostawy; nie obniżaj | bez reguły (cena < 5 zł) |
+| Nakolanniki (para) | 9,49 | 19,98 | 2,30 | 8,53 | 2,17 / 4,92 | 10,68 / 6,74 | poniżej / 29% | kotwica; bez rabatu ilościowego; Allegro Days −5% wychodzi na zero przy każdym zarobku ≥30% | min 9,49, max 10,49 (do czasu pliku C nie obniżaj) |
+| Okulary Univet | 9,49 | 19,98 | 2,30 | 8,53 | 2,17 / 4,92 | 10,68 / 6,74 | poniżej / 29% | do zestawu elastycznego | min 9,49, max 10,49 |
+| Polo damskie Elevate | 14,49 | 24,98 | 2,87 | 12,02 | 3,06 / 6,93 | 14,41 / 8,86 | 0,5% / 39% | utrzymaj, nie obniżaj | min 14,49, max 15,99 |
+| Rękawice Ansell Edge 16-500 | 15,99 | 26,48 | 3,05 | 13,06 | 3,32 / 7,54 | 15,53 / 9,49 | 2,9% / 41% | rabat hurtowy | min 15,59, max 17,49 |
+| Fartuch medyczny BP męski (śr.) | 22,79 | 33,28 | 3,83 | 17,81 | 4,53 / 10,27 | 20,60 / 12,37 | 10% / 46% | kotwica; rabat hurtowy; jedyny kandydat do testu Ads | min 20,60, max = cena +10% |
+| Szorty Purework | 30,00 | 40,49 | 4,66 | 22,84 | 5,81 / 13,18 | 25,98 / 15,42 | 13% / 49% | poza sezonem, bez promocji | bez reguły do wiosny |
+| Spodnie T'RIFFIC 862 | 34,95 | 45,44 | 5,23 | 26,30 | 6,69 / 15,17 | 29,67 / 17,51 | 15% / 50% | etap 2 Wyróżnienia | min 29,69, max 38,45 |
+| Kurtka BP 1884 | 45,00 | 55,49 | 6,38 | 33,31 | 8,47 / 19,22 | 37,17 / 21,77 | 17% / 52% | etap 2 Wyróżnienia | min 37,19, max 49,49 |
+| Okulary Honeywell SP1000 | 56,95 | 67,44 | 7,76 | 41,65 | 10,59 / 24,03 | 46,08 / 26,82 | 19% / 53% | GNC: reguła „Najniższa cena na Allegro” | min 46,09, max 56,95 (chroń GNC) |
+| Jeansy JMP Dixon | 75,00 | 85,49 | 9,83 | 54,25 | 13,79 / 31,30 | 59,54 / 34,46 | 21% / 54% | etap 2 Wyróżnienia; reguła „Top oferta” | min 59,59, max 82,49 |
+| Kamizelka chłodząca | 75,00 | 85,49 | 9,83 | 54,25 | 13,79 / 31,30 | 59,54 / 34,46 | 21% / 54% | poza sezonem | bez reguły do wiosny |
+| Rękawice Ansell Edge 48-205 r.9 (śr.) | 85,00 | 95,49 | 10,98 | 61,23 | 15,57 / 35,33 | 67,00 / 38,69 | 21% / 55% | rabat hurtowy; reguła „Top oferta” | min 66,99, max 93,49 |
+| Ogrodniczki BP 1844 | 95,00 | 105,49 | 12,13 | 68,21 | 17,34 / 39,35 | 74,45 / 42,92 | 22% / 55% | etap 2 Wyróżnienia; reguła „Top oferta” | min 74,49, max 104,49 |
+| Rękawice Heatbeater | 95,75 | 106,24 | 12,22 | 68,74 | 17,48 / 39,66 | 75,01 / 43,24 | 22% / 55% | sezon; parametry; reguła „Top oferta” | min 74,99, max 105,29 |
+| Buty Python Fresh S3 | 119,00 | 129,49 | 14,11 | 85,75 | 21,80 / 49,47 | 93,19 / 53,55 | 22% / 55% | etap 2 Wyróżnienia; reguła „Top oferta” | min 93,19, max 130,89 |
+| Buty Garsport Kele S3 | 149,00 | 159,49 | 16,36 | 107,89 | 27,43 / 62,24 | 115,90 / 66,97 | 22% / 55% | etap 2 Wyróżnienia; reguła „Top oferta” | min 115,99, max 163,89 |
+| Buty Elten Reaction S3 r.47 | 149,00 | 159,49 | 16,36 | 107,89 | 27,43 / 62,24 | 115,90 / 66,97 | 22% / 55% | strona oferty (sekcja 5); reguła „Top oferta” | min 115,99, max 163,89 |
+| Spodnie Fristads 288 r.50 | 170,00 | 180,49 | 17,94 | 123,38 | 31,37 / 71,18 | 131,56 / 76,36 | 23% / 55% | reguła „Top oferta” | min 131,59, max 186,99 |
+| Buty spawacza Bata Scoria | 375,00 | 385,49 | 33,31 | 274,68 | 69,83 / 158,47 | 284,44 / 164,34 | 24% / 56% | wyłącz Wyróżnienie; reguła „Top oferta” | min 284,49, max 412,49 |
+| Kurtka Helly Hansen Magni Shell | 995,00 | 1 005,49 | 79,81 | 732,24 | 186,16 / 422,45 | 746,82 / 426,65 | 25% / 57% | wyłącz Wyróżnienie; test w listopadzie | min 746,89, max = najniższa cena z 30 dni |
 
-Wzory: X_max = (cena + 10,49) × (1/1,23 − 0,115) − 1,50 − 3,92 − M, gdy suma ≤ 110 zł; X_max = (cena + 10,49) × (1/1,23 − 0,075) − 4,40 − 1,50 − 3,92 − M powyżej. Floor dla 2 SKU (np. nakolanniki i Elten) zweryfikuj w Kalkulatorze opłat i prowizji w Sales Center, zanim ustawisz reguły.
+Wzory: koszt zakupu X = Q × 0,88 / (0,88 + k); m = Q − X; floor = 1,433 × (X + 8,42) − 10,49, gdy cena + 10,49 zł ≤ 110 zł, a powyżej 1,355 × (X + 12,82) − 10,49 (M = 3 zł; Z4–Z7). **Minimum widełek ustaw na floor przy 30%.** To bezpieczne do czasu pliku C, bo przy wyższym zarobku prawdziwy floor jest niższy. Gdy dostaniesz koszt zakupu X danego SKU, przelicz floor wzorem z sekcji 2A. Floor dla 2 SKU (np. nakolanniki i Elten) zweryfikuj w Kalkulatorze opłat i prowizji w Sales Center, zanim ustawisz reguły.
 
 **Wariant Smart!** (kupujący z koszykiem ≥49,90 zł nie płaci dostawy). Floor = 1,433 × (X + 1,50 + L + F + M), gdzie L to koszt etykiety netto, a F to opłata Smart! netto dla progu wartości zamówienia (automaty i punkty: 1,99 zł brutto przy 45–64,99 zł; 3,69 zł przy 65–99,99 zł; 6,19 zł przy 100–149,99 zł; 7,99 zł od 150 zł) [fakt Allegro]. Przy cenie 55 zł i X = 25 zł: 1,433 × (25 + 1,50 + 3,92 + 1,62 + 3) = 50,2 zł. Zanim włączysz Smart! dla oferty, sprawdź, czy jej cena przechodzi ten floor.
+
+Ile kosztuje darmowa dostawa Smart! (OBL): na koszyku 55 zł tracisz 8,53 zł netto dostawy, oszczędzasz 1,21 zł prowizji od dostawy i płacisz 1,62 zł netto opłaty Smart!, czyli 8,94 zł na zamówieniu. Przy marży 11–26 zł na zamówieniu sprzedaż musiałaby wzrosnąć o 54–382%. Na produkcie za 120 zł koszt to 12,77 zł przy marży 22–50 zł, więc wystarczy wzrost o 34–139%. Dlatego test Smart! (TOP 14) obejmuje tylko droższe oferty z najwyższym zarobkiem.
 
 **Reguły cenowe: zasady** [fakt Allegro]:
 - reguły wymagają widełek min–max;
@@ -567,19 +579,19 @@ Wzory: X_max = (cena + 10,49) × (1/1,23 − 0,115) − 1,50 − 3,92 − M, gdy
 - masowa zmiana cen plikiem wyłącza reguły w edytowanych ofertach;
 - reguły nie działają w ofertach biorących udział w kampaniach [praktyka ekspercka].
 
-Min ustawiaj zawsze na floor z pliku C. Max = cena + 10% pozwala regule podnieść cenę, gdy Top oferta jest droższa. Podniesienie ceny nie jest promocją i nie łamie Omnibusa, ale podnosi bazę do następnej obniżki.
+Min ustawiaj na floor przy 30% na rękę (tabela wyżej), a po otrzymaniu pliku C na floor z prawdziwego kosztu. Max = cena + 10% pozwala regule podnieść cenę, gdy Top oferta jest droższa. Podniesienie ceny nie jest promocją i nie łamie Omnibusa, ale podnosi bazę do następnej obniżki.
 
 **Wielopaki i zestawy** (zasady [fakt Allegro]: wielopak jako „Zestaw X sztuk” w produkcie z Katalogu; zestaw nie dostaje GNC; sekcja „Wielopak” pokazuje tylko wielopaki tańsze za sztukę lub w tej samej cenie):
 
-| Projekt | Skład | Cena (propozycja) | Cena za sztukę | Warunek marży (M = 3 zł) | Licznik zamówień |
+| Projekt | Skład | Cena (propozycja) | Cena za sztukę | Warunek marży (M = 3 zł przed PIT) | Licznik zamówień |
 |---|---|---:|---:|---|---|
-| Nakolanniki 10 par (istnieje) | 10 × nakolanniki | 89,90 zł | 8,99 zł ≤ 9,49 | X ≤ 6,17 zł za parę | bez zmian: 1 zamówienie z 3 parami = 1 zamówienie z wielopakiem |
-| Nakolanniki 20 par (istnieje) | 20 × nakolanniki | 169,90 zł | 8,50 zł | X ≤ 6,02 zł | jak wyżej |
-| Gogle 20 szt. (istnieje) | 20 × gogle | ≤ 40,00 zł | ≤ 2,00 zł | X ≤ 1,34 zł przy 40 zł; jeśli X jest wyższy, nie obniżaj | jak wyżej |
-| Honeywell SP1000 5 szt. (nowy, obok oferty z GNC) | 5 × SP1000 | ≤ 284,75 zł | ≤ 56,95 zł | policz z C; oferta pojedyncza zostaje z GNC | jak wyżej |
+| Nakolanniki 10 par (istnieje) | 10 × nakolanniki | 89,90 zł | 8,99 zł ≤ 9,49 | X ≤ 6,17 zł za parę, czyli zarobek na rękę ≥34%; przy 30% marża wynosi 1,06 zł | bez zmian: 1 zamówienie z 3 parami = 1 zamówienie z wielopakiem |
+| Nakolanniki 20 par (istnieje) | 20 × nakolanniki | 169,90 zł | 8,50 zł | X ≤ 6,02 zł, czyli zarobek ≥37% | jak wyżej |
+| Gogle 20 szt. (istnieje) | 20 × gogle | ≤ 40,00 zł | ≤ 2,00 zł | X ≤ 1,34 zł, czyli zarobek ≥129%, poza Twoim zakresem: nie obniżaj do 2 zł za sztukę | jak wyżej |
+| Honeywell SP1000 5 szt. (nowy, obok oferty z GNC) | 5 × SP1000 | ≤ 284,75 zł | ≤ 56,95 zł | marża dodatnia w całym zakresie (52,75 zł przy 30%); oferta pojedyncza zostaje z GNC | jak wyżej |
 | Zestaw elastyczny „BHP podstawowy” | okulary Honeywell lub Univet + gogle + nakolanniki + rękawice Ansell 16-500 | rabat 5% na zestaw | — | każda pozycja ≥ floor po rabacie | zestaw = 1 zamówienie, ale podnosi koszyk; tanie oferty pojedyncze zostają |
 
-Zestawy elastyczne mają do 6 pozycji, do 30 ofert z jednej kategorii liściowej w pozycji i tylko rabaty procentowe; nie obejmują ofert B2B ani ze Strefy Okazji [fakt Allegro]. Najpierw sprawdź, czy wszystkie pozycje są w tej samej kategorii liściowej. Rabat ilościowy (min. 15% na 2. sztukę) [fakt Allegro] testuj tylko na fartuchu BP (1,75 sztuki na transakcję) i tylko przy X ≤ 13,5 zł. Nie stosuj go na nakolannikach.
+Zestawy elastyczne mają do 6 pozycji, do 30 ofert z jednej kategorii liściowej w pozycji i tylko rabaty procentowe; nie obejmują ofert B2B ani ze Strefy Okazji [fakt Allegro]. Najpierw sprawdź, czy wszystkie pozycje są w tej samej kategorii liściowej. Rabat ilościowy (min. 15% na 2. sztukę) [fakt Allegro] testuj tylko na fartuchu BP (1,75 sztuki na transakcję). Druga sztuka z rabatem wychodzi na zero przy zarobku ≥28%, czyli w całym Twoim zakresie. Nie stosuj go na nakolannikach.
 
 **Tanie oferty zostają jako źródło zamówień:** nakolanniki, gogle EN166, okulary Univet, polo Elevate, Ansell 16-500, fartuch BP, wkładki Bama. Nie wycofuj ich i nie podnoś cen powyżej widełek, bo utrzymują licznik zamówień Super Sprzedawcy.
 
@@ -603,7 +615,7 @@ Zestawy elastyczne mają do 6 pozycji, do 30 ofert z jednej kategorii liściowej
 | 26.12–31.01 | Zimowe przeceny | przyszłe [hipoteza: w 2025 r. z dodatkową prowizją 60% stawki] | — | zima, końcówki rozmiarów | m_k po odjęciu 0,6 × P |
 | do 31.03.2027 | 0% prowizji w eksporcie 2.0 | aktywny [fakt Allegro] | parytet cen ≤ +8%, produkt nowy na rynku (90 dni) | sekcja 9 | zwrot prowizji |
 
-Zysk z kampanii liczysz tak: Q_k × m_k − Q_0 × m_0 [wzór z metryk]. Przykład: przy m_0 = 18 zł i m_k = 12 zł kampania musi zwiększyć sprzedaż sztuk o co najmniej 50%. Zgłaszaj 3–5 SKU naraz, nie cały asortyment, i licz wynik po każdej edycji.
+Zysk z kampanii liczysz tak: Q_k × m_k − Q_0 × m_0 [wzór z metryk]. Przykład: buty Elten za 149 zł obniżone o 5% muszą sprzedać o 25% więcej sztuk przy 30% na rękę albo o 10% więcej przy 120%. Zgłaszaj 3–5 SKU naraz, nie cały asortyment, i licz wynik po każdej edycji.
 
 ---
 
@@ -801,7 +813,7 @@ Bezpłatne automatyzacje: reguły cenowe, zwrot wpłaty po odbiorze zwrotu, szab
 | Reklama i promowanie / obrót | 9,9% | ≤3% | ≤3% | ≤5% (tylko rentowne Ads) | CF |
 | Łączny koszt Allegro / obrót | 31,4% | ≤23% | ≤23% | ≤24% | CF |
 | Stopa odzysku prowizji po zwrotach | ok. 6% | ≥90% | ≥95% | ≥95% | A9 |
-| Marża konta netto (miesiąc) | 67–625 zł (szac.) | +245 do +930 zł wobec scenariusza bez zmian | policz z C | policz z C | CF + C |
+| Marża konta przed PIT (miesiąc) | 309–1 111 zł (szac., 30–120% na rękę) | +207 do +929 zł wobec scenariusza bez zmian | policz z C | policz z C | CF + C |
 | Udział transakcji z Top ofertą | brak danych | pomiar bazowy | +5 p.p. | +10 p.p. | A17 |
 
 Cele sprzedażowe to cele, nie prognozy. Uzasadnienie: tempo z ostatnich 7 dni (16 transakcji, 1 153,50 zł) daje 4 944 zł w Analytics na 30 dni, czyli już powyżej celu 60-dniowego w tej samej mierze. Część ruchu odejdzie jednak po wyłączeniu promowania.
@@ -832,7 +844,7 @@ Cele sprzedażowe to cele, nie prognozy. Uzasadnienie: tempo z ostatnich 7 dni (
 **Co dołączyć następnym razem, w tej kolejności:** C, A10, A9, A1_90d, A7, B1–B3, A17–A19, K1 (20 produktów z sekcji 8).
 
 **Pytania do właściciela** (każda odpowiedź zmienia zalecenia):
-1. Ile kosztuje Cię netto (zakup z transportem do Ciebie) 20 SKU z tabeli w sekcji 6? Od tego zależą floor, reguły cenowe, warunek wejścia Ads i to, czy gogle za 2 zł są stratne.
+1. Które produkty mają zarobek ok. 30%, a które ok. 120% na rękę? Najlepiej podaj koszt zakupu netto (z transportem do Ciebie) 20 SKU z tabeli w sekcji 6. Dziś liczę oba krańce; prawdziwy koszt zawęzi floor, widełki reguł cenowych i warunek wejścia Ads. Dotyczy to zwłaszcza fartucha BP (test Ads przy ≥80%), nakolanników (wielopak przy ≥37%) i Helly Hansen Magni (test Wyróżnienia).
 2. Które produkty masz fizycznie na półce, a które zamawiasz u hurtowni po sprzedaży? Jeśli te drugie mają deklarację „natychmiast”, to one psują Wysyłkę w terminie.
 3. O której godzinie najpóźniej możesz nadać paczkę (kurier, automat) w dni robocze i w sobotę, i czy możesz pakować dwa razy dziennie?
 4. Czy Wyróżnienia mają włączone automatyczne odnawianie i od kiedy działa każde z 13? To decyduje, czy oszczędność wynosi 164 czy 631 zł netto miesięcznie.
@@ -841,4 +853,4 @@ Cele sprzedażowe to cele, nie prognozy. Uzasadnienie: tempo z ostatnich 7 dni (
 7. Czy masz numery EPR dla Polski, Czech, Słowacji i Węgier? Jeśli nie, czy rejestracja na Węgrzech (MOHU) jest dla Ciebie realna?
 8. Jakie są warunki spłaty Allegro Kapitał (rata, potrącenie z wpływów, termin)?
 9. Czy Design_District sprzedaje te same produkty (limit 2 ofert „Nowy” na produkt liczony dla obu kont)?
-10. Jaką najniższą marżę na zamówieniu akceptujesz, czyli jakie M wstawić do wzoru na floor (przyjąłem 3 zł)?
+10. Jaką najniższą marżę na zamówieniu akceptujesz, czyli jakie M wstawić do wzoru na floor (przyjąłem 3 zł przed PIT)? Czy podatek dochodowy płacisz według stawki 12%, czy część dochodu wpada w próg 32%? Przyjąłem 12%.
